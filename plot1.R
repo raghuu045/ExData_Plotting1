@@ -14,7 +14,7 @@ data <- read.table(unz("./data/household_power_consumption.zip",
                    colClasses = c(rep("character",1),rep("NULL",8)), 
                    stringsAsFactors=FALSE)
 date_req_log <- (data$Date == "1/2/2007" |  data$Date == "2/2/2007")
-row_names <- 1:2072379
+row_names <- 1:length(data$Date)
 min_row <- min(row_names[date_req_log])
 max_row <- max(row_names[date_req_log])
 num_of_rows <- max_row - min_row + 1
